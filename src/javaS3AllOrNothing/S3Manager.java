@@ -9,8 +9,10 @@ import com.amazonaws.services.s3.AmazonS3Client;
 
 public class S3Manager {
 	
-private static final Logger logger = Logger.getLogger(BucketDownloader.class.getName());
+	@SuppressWarnings("unused")
+	private static final Logger logger = Logger.getLogger(BucketDownloader.class.getName());
 	
+	// This attribute should be static, but I avoided that during local testing
 	private static AmazonS3 s3;
 	
 	/**
@@ -18,7 +20,7 @@ private static final Logger logger = Logger.getLogger(BucketDownloader.class.get
 	 */
 	public S3Manager() {
 		if ( s3 == null ) {
-			AWSCredentialsProvider credentialsProvider = new ClasspathPropertiesFileCredentialsProvider("AwsCredentials.properties");
+			AWSCredentialsProvider credentialsProvider = new ClasspathPropertiesFileCredentialsProvider("AwsCredentials.target.properties");
 			s3  = new AmazonS3Client(credentialsProvider);
 		}
 	}

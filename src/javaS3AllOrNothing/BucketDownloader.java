@@ -63,6 +63,10 @@ public class BucketDownloader {
 			
 			for ( S3ObjectSummary objectSummary : list ) {
 				
+				File newFile = new File (bucketName +"/"+ objectSummary.getKey());
+				if ( newFile.exists() ) continue;
+				
+				
 				// Download the object content
 				S3Object object = s3.getObject(bucketName, objectSummary.getKey());
 				S3ObjectInputStream objectContent = object.getObjectContent();
