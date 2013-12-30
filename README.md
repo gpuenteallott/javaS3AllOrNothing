@@ -1,7 +1,5 @@
 <h1>Java S3 All or Nothing</h1>
 
-==================
-
 <p>Java S3 All or Nothing is a small one-evening project to create a simple Java program to make operations will all the contents in a AWS S3 bucket.</p>
 
 <p>The purpose was being able to download the entire bucket to a folder and upload a folder to a new bucket.</p>
